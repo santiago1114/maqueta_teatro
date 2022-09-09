@@ -152,8 +152,9 @@ const urlParams = new URLSearchParams(queryString)
 
 if (urlParams.has("puesto")) {
   const puesto = urlParams.get("puesto")
-  console.log("====================================")
-  console.log("El puesto seleccionado es: " + puesto)
-  console.log("====================================")
-  document.getElementById(puesto).style.backgroundColor = "#3498DB"
+  const puestos = puesto.split("-")
+
+  puestos.forEach(puesto => {
+    document.getElementById(puesto).style.backgroundColor = "#3498DB"
+  });  
 }
