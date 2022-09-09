@@ -1,0 +1,1 @@
+let gradaIzq = document.getElementById("gradaIzquierda")
