@@ -8,191 +8,88 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div
-      style="
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-      "
-    >
-      <div class="screen"></div>
-      <div style="display: flex; gap: 30px">
-        <div id="gradaIzquierda">
-          <div style="display: flex">
-            <div class="puesto">C1</div>
-            <div class="puesto">C3</div>
-            <div class="puesto">C5</div>
-            <div class="puesto">C7</div>
-          </div>
-          <div style="display: flex">
-            <div class="puesto">D1</div>
-            <div class="puesto">D3</div>
-            <div class="puesto">D5</div>
-            <div class="puesto">D7</div>
-            <div class="puesto">D9</div>
-          </div>
-          <div style="display: flex">
+    <div>
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          perspective: 1000px;
+          margin-bottom: 30px;
+        "
+      >
+        <ul class="showcase">
+          <li>
             <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-          </div>
-          <div style="display: flex">
-            <div class="puesto"><p>CD1</p></div>
-            <div class="puesto"><p>CD1</p></div>
-            <div class="puesto"><p>CD1</p></div>
-            <div class="puesto"><p>CD1</p></div>
-            <div class="puesto"><p>CD1</p></div>
-            <div class="puesto"><p>CD1</p></div>
-          </div>
-          <div style="display: flex">
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto ocupado">
-              <p>CD1</p>
-            </div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-          </div>
-          <div style="display: flex">
-            <div class="puesto"></div>
+            <small>Libre</small>
+          </li>
+          <li>
+            <div class="puesto seleccionado"></div>
+            <small>Seleccionado</small>
+          </li>
+          <li>
             <div class="puesto ocupado"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
+            <small>Ocupado</small>
+          </li>
+        </ul>
+
+        <div class="screen">Escenario</div>
+        <div style="display: flex; gap: 30px; margin-top: 50px">
+          <div id="gradaIzquierda">
+            <div style="display: flex">
+              <div class="puesto" id="C1">C1</div>
+              <div class="puesto" id="C3">C3</div>
+              <div class="puesto" id="C5">C5</div>
+              <div class="puesto" id="C7">C7</div>
+            </div>
+            <div style="display: flex">
+              <div class="puesto" id="D1">D1</div>
+              <div class="puesto" id="D3">D3</div>
+              <div class="puesto" id="D5">D5</div>
+              <div class="puesto" id="D7">D7</div>
+              <div class="puesto" id="D9">D9</div>
+            </div>
           </div>
-          <div style="display: flex">
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
+
+          <div id="gradaCentral"></div>
+
+          <div id="gradaDerecha">
+            <div style="display: flex; justify-content: flex-end">
+              <div class="puesto" id="C2">C2</div>
+              <div class="puesto" id="C4">C4</div>
+              <div class="puesto" id="C6">C6</div>
+              <div class="puesto" id="C8">C8</div>
+            </div>
+            <div style="display: flex; justify-content: flex-end">
+              <div class="puesto" id="D2">D2</div>
+              <div class="puesto" id="D4">D4</div>
+              <div class="puesto" id="D6">D6</div>
+              <div class="puesto" id="D8">D8</div>
+              <div class="puesto" id="D10">D10</div>
+            </div>
           </div>
         </div>
+        <div style="display: flex; gap: 30px">
+          <div id="balconIzquierda"></div>
 
-        <div>
-          <div style="display: flex">
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-          </div>
-          <div style="display: flex">
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-          </div>
-          <div style="display: flex">
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-          </div>
-          <div style="display: flex">
-            <div class="puesto"><p>CD1</p></div>
-            <div class="puesto"><p>CD1</p></div>
-            <div class="puesto"><p>CD1</p></div>
-            <div class="puesto"><p>CD1</p></div>
-            <div class="puesto"><p>CD1</p></div>
-            <div class="puesto"><p>CD1</p></div>
-          </div>
-          <div style="display: flex">
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto ocupado">
-              <p>CD1</p>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              gap: 30px;
+            "
+          >
+            <div style="display: flex; gap: 30px">
+              <div id="centroIzquerda"></div>
+              <div id="centroDerecha"></div>
             </div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
+            <div id="balconCentro"></div>
           </div>
-          <div style="display: flex">
-            <div class="puesto"></div>
-            <div class="puesto ocupado"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-          </div>
-          <div style="display: flex">
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-          </div>
-        </div>
 
-        <div>
-          <div style="display: flex; justify-content: flex-end">
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-          </div>
-          <div style="display: flex; justify-content: flex-end">
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-          </div>
-          <div style="display: flex">
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-          </div>
-          <div style="display: flex">
-            <div class="puesto"><p>CD1</p></div>
-            <div class="puesto"><p>CD1</p></div>
-            <div class="puesto"><p>CD1</p></div>
-            <div class="puesto"><p>CD1</p></div>
-            <div class="puesto"><p>CD1</p></div>
-            <div class="puesto"><p>CD1</p></div>
-          </div>
-          <div style="display: flex">
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto ocupado">
-              <p>CD1</p>
-            </div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-          </div>
-          <div style="display: flex">
-            <div class="puesto"></div>
-            <div class="puesto ocupado"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-          </div>
-          <div style="display: flex">
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-            <div class="puesto"></div>
-          </div>
+          <div id="balconDerecha"></div>
         </div>
       </div>
     </div>

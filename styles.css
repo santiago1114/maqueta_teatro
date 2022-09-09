@@ -1,19 +1,6 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-html {
-  font-size: 16px;
-}
-
-.plane {
-  margin: 20px auto;
-  max-width: 300px;
-}
-
 body {
-  background-color: #900C3F ;
+  background-color: #242333;
+  width: fit-content;
 }
 
 .screen {
@@ -23,12 +10,35 @@ body {
   margin: 15px 0;
   transform: rotateX(-45deg);
   box-shadow: 0 3px 10px rgba(255,255,255,0.7);
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: x-large;
+}
+
+.showcase li small {
+  margin-left:2px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.showcase{
+  background-color: rgba(0,0,0,0.1);
+  padding:5px 10px ;
+  border-radius:5px;
+  color:#777;
+  list-style: none;
+  display:flex;
+  justify-content: space-between;
+}
+.showcase li{
+  display:flex;
+  align-items: center;
+  justify-content: center; 
+  margin:0 10px;
 }
 
 .exit {
   position: relative;
   height: 50px;
-
   content: "EXIT";
   font-size: 14px;
   line-height: 18px;
@@ -42,25 +52,15 @@ body {
   transform: translate(0, -50%);
 }
 
-.fuselage {
-  border-right: 5px solid #d8d8d8;
-  border-left: 5px solid #d8d8d8;
-}
-
-ol {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 .puesto {
   font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: x-small;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #33FF57;
-  height: 36px;
-  width: 45px;
+  height: 24px;
+  width: 30px;
   margin: 3px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -72,84 +72,4 @@ ol {
 
 .ocupado {
   background-color: #FF5733;
-}
-
-
-@-webkit-keyframes rubberBand {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
-  }
-
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-    transform: scale3d(1.15, 0.85, 1);
-  }
-
-  65% {
-    -webkit-transform: scale3d(0.95, 1.05, 1);
-    transform: scale3d(0.95, 1.05, 1);
-  }
-
-  75% {
-    -webkit-transform: scale3d(1.05, 0.95, 1);
-    transform: scale3d(1.05, 0.95, 1);
-  }
-
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-@keyframes rubberBand {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
-  }
-
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-    transform: scale3d(1.15, 0.85, 1);
-  }
-
-  65% {
-    -webkit-transform: scale3d(0.95, 1.05, 1);
-    transform: scale3d(0.95, 1.05, 1);
-  }
-
-  75% {
-    -webkit-transform: scale3d(1.05, 0.95, 1);
-    transform: scale3d(1.05, 0.95, 1);
-  }
-
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-.rubberBand {
-  -webkit-animation-name: rubberBand;
-  animation-name: rubberBand;
 }
