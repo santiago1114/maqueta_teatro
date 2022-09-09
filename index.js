@@ -7,7 +7,6 @@ const abc = [
   "f",
   "g",
   "h",
-  "i",
   "j",
   "k",
   "l",
@@ -21,6 +20,7 @@ const abc = [
   "t",
   "u",
 ]
+
 
 let grada = document.getElementById("gradaIzquierda")
 for (let i = 4; i < abc.length; i++) {
@@ -155,5 +155,5 @@ if (urlParams.has("puesto")) {
   console.log("====================================")
   console.log("El puesto seleccionado es: " + puesto)
   console.log("====================================")
-  document.getElementById(puesto).style.backgroundColor = "blue"
+  document.getElementById(puesto).style.backgroundColor = "#3498DB"
 }
