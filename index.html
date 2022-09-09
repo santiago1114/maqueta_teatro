@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div
+      style="
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      "
+    >
+      <div class="screen"></div>
+      <div style="display: flex; gap: 30px">
+        <div>
+          <div style="display: flex">
+            <div class="puesto">C1</div>
+            <div class="puesto">C3</div>
+            <div class="puesto">C5</div>
+            <div class="puesto">C7</div>
+          </div>
+          <div style="display: flex">
+            <div class="puesto">D1</div>
+            <div class="puesto">D3</div>
+            <div class="puesto">D5</div>
+            <div class="puesto">D7</div>
+            <div class="puesto">D9</div>
+          </div>
+          <div style="display: flex" id="gradaIzquierda">
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+          </div>
+          <div style="display: flex">
+            <div class="puesto"><p>CD1</p></div>
+            <div class="puesto"><p>CD1</p></div>
+            <div class="puesto"><p>CD1</p></div>
+            <div class="puesto"><p>CD1</p></div>
+            <div class="puesto"><p>CD1</p></div>
+            <div class="puesto"><p>CD1</p></div>
+          </div>
+          <div style="display: flex">
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto ocupado">
+              <p>CD1</p>
+            </div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+          </div>
+          <div style="display: flex">
+            <div class="puesto"></div>
+            <div class="puesto ocupado"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+          </div>
+          <div style="display: flex">
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+          </div>
+        </div>
+
+        <div>
+          <div style="display: flex">
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+          </div>
+          <div style="display: flex">
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+          </div>
+          <div style="display: flex">
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+          </div>
+          <div style="display: flex">
+            <div class="puesto"><p>CD1</p></div>
+            <div class="puesto"><p>CD1</p></div>
+            <div class="puesto"><p>CD1</p></div>
+            <div class="puesto"><p>CD1</p></div>
+            <div class="puesto"><p>CD1</p></div>
+            <div class="puesto"><p>CD1</p></div>
+          </div>
+          <div style="display: flex">
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto ocupado">
+              <p>CD1</p>
+            </div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+          </div>
+          <div style="display: flex">
+            <div class="puesto"></div>
+            <div class="puesto ocupado"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+          </div>
+          <div style="display: flex">
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+          </div>
+        </div>
+
+        <div>
+          <div style="display: flex; justify-content: flex-end">
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+          </div>
+          <div style="display: flex; justify-content: flex-end">
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+          </div>
+          <div style="display: flex">
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+          </div>
+          <div style="display: flex">
+            <div class="puesto"><p>CD1</p></div>
+            <div class="puesto"><p>CD1</p></div>
+            <div class="puesto"><p>CD1</p></div>
+            <div class="puesto"><p>CD1</p></div>
+            <div class="puesto"><p>CD1</p></div>
+            <div class="puesto"><p>CD1</p></div>
+          </div>
+          <div style="display: flex">
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto ocupado">
+              <p>CD1</p>
+            </div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+          </div>
+          <div style="display: flex">
+            <div class="puesto"></div>
+            <div class="puesto ocupado"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+          </div>
+          <div style="display: flex">
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+            <div class="puesto"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
