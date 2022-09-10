@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body style="background-color: #242333;">
-    <div>
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          perspective: 1000px;
-          margin-bottom: 30px;
-        "
-      >
-        <ul class="showcase">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Document</title>
+  <!-- CSS only -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body style="background-color: #242333;">
+  <div>
+    <div class="flex-container">
+
+        <ul class="flex-item showcase">
           <li>
             <div class="puesto"></div>
             <small>Libre</small>
@@ -34,65 +29,61 @@
           </li>
         </ul>
 
-        <div class="screen">Escenario</div>
-        <div style="display: flex; gap: 200px; margin-top: 50px">
-          <div id="gradaIzquierda">
-            <div style="display: flex">
-              <div class="puesto" id="C1">C1</div>
-              <div class="puesto" id="C3">C3</div>
-              <div class="puesto" id="C5">C5</div>
-              <div class="puesto" id="C7">C7</div>
-            </div>
-            <div style="display: flex">
-              <div class="puesto" id="D1">D1</div>
-              <div class="puesto" id="D3">D3</div>
-              <div class="puesto" id="D5">D5</div>
-              <div class="puesto" id="D7">D7</div>
-              <div class="puesto" id="D9">D9</div>
-            </div>
+
+      <div class="screen"></div>
+      <div class="flex-item flex-item-container">
+        <div class="flex-item" id="gradaIzquierda">
+          <div style="display: flex">
+            <div class="puesto" id="C1">C1</div>
+            <div class="puesto" id="C3">C3</div>
+            <div class="puesto" id="C5">C5</div>
+            <div class="puesto" id="C7">C7</div>
           </div>
-
-          <div id="gradaCentral"></div>
-
-          <div id="gradaDerecha">
-            <div style="display: flex; justify-content: flex-end">
-              <div class="puesto" id="C2">C2</div>
-              <div class="puesto" id="C4">C4</div>
-              <div class="puesto" id="C6">C6</div>
-              <div class="puesto" id="C8">C8</div>
-            </div>
-            <div style="display: flex; justify-content: flex-end">
-              <div class="puesto" id="D2">D2</div>
-              <div class="puesto" id="D4">D4</div>
-              <div class="puesto" id="D6">D6</div>
-              <div class="puesto" id="D8">D8</div>
-              <div class="puesto" id="D10">D10</div>
-            </div>
+          <div style="display: flex">
+            <div class="puesto" id="D1">D1</div>
+            <div class="puesto" id="D3">D3</div>
+            <div class="puesto" id="D5">D5</div>
+            <div class="puesto" id="D7">D7</div>
+            <div class="puesto" id="D9">D9</div>
           </div>
         </div>
-        <div style="display: flex; gap: 30px; margin-top: 30px;">
-          <div id="balconIzquierda"></div>
 
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              gap: 30px;
-            "
-          >
-            <div style="display: flex; gap: 30px">
-              <div id="centroIzquerda"></div>
-              <div id="centroDerecha"></div>
-            </div>
-            <div id="balconCentro"></div>
+        <div class="flex-item" id="gradaCentral"></div>
+
+        <div class="flex-item" id="gradaDerecha">
+          <div style="display: flex; justify-content: flex-end">
+            <div class="puesto" id="C2">C2</div>
+            <div class="puesto" id="C4">C4</div>
+            <div class="puesto" id="C6">C6</div>
+            <div class="puesto" id="C8">C8</div>
           </div>
-
-          <div id="balconDerecha"></div>
+          <div style="display: flex; justify-content: flex-end">
+            <div class="puesto" id="D2">D2</div>
+            <div class="puesto" id="D4">D4</div>
+            <div class="puesto" id="D6">D6</div>
+            <div class="puesto" id="D8">D8</div>
+            <div class="puesto" id="D10">D10</div>
+          </div>
         </div>
       </div>
+      <div class="flex-item flex-item-container">
+
+        <div class="flex-item" id="balconIzquierda"></div>
+
+        <div class="flex-item flex-item-container-col">
+          <div class="flex-item flex-item-container">
+            <div class="flex-item" id="centroIzquerda"></div>
+            <div class="flex-item" id="centroDerecha"></div>
+          </div>
+          <div class="flex-item" id="balconCentro"></div>
+        </div>
+
+        <div class="flex-item" id="balconDerecha"></div>
+
+      </div>
     </div>
-    <script src="index.js"></script>
-  </body>
+  </div>
+  <script src="index.js"></script>
+</body>
+
 </html>
