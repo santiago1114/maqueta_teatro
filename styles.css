@@ -44,11 +44,22 @@ body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.showcase {
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 5px 10px;
+.fixed-container {
+  color: beige;
+  background-color: rgba(57, 84, 153, 0.9);
+  text-align: center;
   border-radius: 5px;
-  color: #777;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  position: fixed;
+  top: 10;
+  left: 50%;
+  transform: translate(-50%,0);
+  z-index: 99;
+}
+
+.showcase {
+  padding: 5px 10px;
+  color: beige;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -64,10 +75,11 @@ body {
 .puesto {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: x-small;
+  color: beige;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #33FF57;
+  background-color: #444451;
   height: 24px;
   width: 30px;
   margin: 3px;
@@ -76,9 +88,17 @@ body {
 }
 
 .seleccionado {
-  background-color: #3498DB;
+  background-color: #0081cb;
 }
 
 .ocupado {
-  background-color: #FF5733;
+  background-color: #fff;
+  color: black;
+}
+
+.logo {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 99;
 }

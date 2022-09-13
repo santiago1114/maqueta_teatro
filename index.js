@@ -147,11 +147,7 @@ for (let i = 9; i < 11; i++) {
       </div>`
 }
 
-document.getElementById('C106').scrollIntoView({
-  behavior: 'auto',
-  block: 'center',
-  inline: 'center'
-});
+
 
 const queryString = window.location.search
 const urlParams = new URLSearchParams(queryString)
@@ -162,6 +158,12 @@ if (urlParams.has("puesto")) {
 
   puestos.forEach(puesto => {
     document.getElementById(puesto).style.backgroundColor = "#3498DB"
-  }); 
+  });
+
+  document.getElementById(puestos[0]).scrollIntoView({
+    behavior: 'auto',
+    block: 'center',
+    inline: 'center'
+  });
 
 }
