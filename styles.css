@@ -1,7 +1,15 @@
 html,
 body {
   width: fit-content;
-  height: min-content;
+  margin: 0;
+  height: 100%; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: beige;
+}
+
+@keyframes dragAnimation {
+  from {right: 20px;}
+  to {right: 60px;}
 }
 
 .flex-item {
@@ -11,14 +19,14 @@ body {
 .flex-item-container {
   display: flex;
   gap: 30px;
-  margin-top: 50px
+  margin-top: 50px;
 }
 
 .flex-item-container-col {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  margin-top: 50px
+  margin-top: 50px;
 }
 
 .flex-container {
@@ -26,6 +34,7 @@ body {
   flex-direction: column;
   perspective: 1000px;
   margin-bottom: 30px;
+  height: 100%;
 }
 
 .screen {
@@ -36,7 +45,6 @@ body {
   transform: rotateX(-45deg);
   box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
   align-self: center;
-
 }
 
 .showcase li small {
@@ -55,6 +63,7 @@ body {
   left: 50%;
   transform: translate(-50%,0);
   z-index: 99;
+  -webkit-backface-visibility: hidden;
 }
 
 .showcase {
@@ -101,4 +110,38 @@ body {
   bottom: 20px;
   left: 20px;
   z-index: 99;
+  -webkit-backface-visibility: hidden;
+}
+
+.drag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: beige;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  animation-name: dragAnimation;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  -webkit-backface-visibility: hidden;
+}
+
+@media screen and (max-width: 64em) {
+  body {
+    font-size: 80%;
+  }
+}
+
+@media screen and (max-width: 50em) {
+  body {
+    font-size: 70%;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  body {
+    font-size: 60%;
+  }
 }

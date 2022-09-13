@@ -35,7 +35,7 @@ for (let i = 4; i < abc.length; i++) {
 }
 
 grada = document.getElementById("gradaCentral")
-for (let i = 2; i < abc.length-1; i++) {
+for (let i = 2; i < abc.length - 1; i++) {
   grada.innerHTML += `<div style="display: flex">
       <div class="puesto" id="${abc[i] + 101}">${abc[i] + 101}</div>
       <div class="puesto" id="${abc[i] + 102}">${abc[i] + 102}</div>
@@ -65,7 +65,7 @@ for (let i = 4; i < abc.length; i++) {
 }
 
 grada = document.getElementById("balconIzquierda")
-for (let i = 3; i < abc.length-10; i++) {
+for (let i = 3; i < abc.length - 10; i++) {
   grada.innerHTML += `<div style="display: flex">
         <div class="puesto" id="${abc[i] + abc[i] + 2}">${abc[i] + abc[i] + 2}</div>
         <div class="puesto" id="${abc[i] + abc[i] + 4}">${abc[i] + abc[i] + 4}</div>
@@ -80,7 +80,7 @@ for (let i = 3; i < abc.length-10; i++) {
 }
 
 grada = document.getElementById("balconDerecha")
-for (let i = 3; i < abc.length-10; i++) {
+for (let i = 3; i < abc.length - 10; i++) {
   grada.innerHTML += `<div style="display: flex">
         <div class="puesto" id="${abc[i] + abc[i] + 1}">${abc[i] + abc[i] + 1}</div>
         <div class="puesto" id="${abc[i] + abc[i] + 3}">${abc[i] + abc[i] + 3}</div>
@@ -136,7 +136,7 @@ for (let i = 0; i < 3; i++) {
 
 grada = document.getElementById("balconCentro")
 for (let i = 9; i < 11; i++) {
-    grada.innerHTML += `<div style="display: flex">
+  grada.innerHTML += `<div style="display: flex">
       <div class="puesto" id="${abc[i] + abc[i] + 101}">${abc[i] + abc[i] + 101}</div>
       <div class="puesto" id="${abc[i] + abc[i] + 102}">${abc[i] + abc[i] + 102}</div>
       <div class="puesto" id="${abc[i] + abc[i] + 103}">${abc[i] + abc[i] + 103}</div>
@@ -157,7 +157,7 @@ if (urlParams.has("puesto")) {
   const puestos = puesto.split("-")
 
   puestos.forEach(puesto => {
-    document.getElementById(puesto).style.backgroundColor = "#3498DB"
+    document.getElementById(puesto).classList.add('seleccionado')
   });
 
   document.getElementById(puestos[0]).scrollIntoView({
@@ -165,5 +165,15 @@ if (urlParams.has("puesto")) {
     block: 'center',
     inline: 'center'
   });
+}
+
+
+if (urlParams.has("puesto-ocupado")) {
+  const puestoOcupado = urlParams.get("puesto-ocupado")
+  const puestosOcupados = puestoOcupado.split("-")
+
+  puestosOcupados.forEach(puesto => {
+    document.getElementById(puesto).classList.add('ocupado')
+  })
 
 }
