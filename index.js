@@ -1,3 +1,17 @@
+function getData(){
+  const req = new XMLHttpRequest()
+  req.open("GET","http://45.65.233.26:8181/teatro/get-all-vip-ocupados")
+  req.responseType = "json"
+  req.send()
+  req.onload = ()=>{
+    const res = req.response
+    console.log(res);
+    for (let i = 0; i < res.length; i++) {
+      document.getElementById(res.puesto).classList.add('ocupado')
+    }
+  }
+}
+
 const abc = [
   "A",
   "B",
@@ -167,13 +181,4 @@ if (urlParams.has("puesto")) {
   });
 }
 
-
-if (urlParams.has("puesto-ocupado")) {
-  const puestoOcupado = urlParams.get("puesto-ocupado")
-  const puestosOcupados = puestoOcupado.split("-")
-
-  puestosOcupados.forEach(puesto => {
-    document.getElementById(puesto).classList.add('ocupado')
-  })
-
-}
+getData()
