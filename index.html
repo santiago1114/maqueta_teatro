@@ -16,37 +16,37 @@
 
 <body style="background-color: #242333;">
 
-    <img src="logo.png" alt="logo" width="100px" class="logo">
-    <div class="drag">
-      <img src="drag.svg" alt="drag" width="80px">
-      Desplazate
-    </div>
-    
 
-    <div class="fixed-container">
-      <p>Teatro Bicentenario</p>
+  <div class="fixed-container">
+    <img src="logo.png" alt="logo" width="80px">
+    <p>Teatro Bicentenario</p>
+    <ul class="showcase">
+      <li>
+        <div class="puesto"></div>
+        <small>Libre</small>
+      </li>
+      <li>
+        <div class="puesto discapacidad"></div>
+        <small>Discapacidad</small>
+      </li>
+      <li>
+        <div class="puesto seleccionado"></div>
+        <small>Seleccionado</small>
+      </li>
+      <li>
+        <div class="puesto ocupado"></div>
+        <small>Ocupado</small>
+      </li>
+    </ul>
+  </div>
 
-      <ul class="showcase">
-        <li>
-          <div class="puesto"></div>
-          <small>Libre</small>
-        </li>
-        <li>
-          <div class="puesto seleccionado"></div>
-          <small>Seleccionado</small>
-        </li>
-        <li>
-          <div class="puesto ocupado"></div>
-          <small>Ocupado</small>
-        </li>
-      </ul>
-    </div>
 
-   
+  <div class="flex-container">
 
-  <div>
-    <div class="flex-container">
+    <div class="flex-item flex-item-container-col">
+
       <div class="screen"></div>
+
       <div class="flex-item flex-item-container">
         <div class="flex-item" id="gradaIzquierda">
           <div style="display: flex">
@@ -82,28 +82,20 @@
           </div>
         </div>
       </div>
-      <div class="flex-item flex-item-container-col">
 
-        
-
-        
-          <div class="flex-item flex-item-container">
-            <div class="flex-item" id="centroIzquerda"></div>
-            <div class="flex-item" id="centroDerecha"></div>
-          </div>
-          <div class="flex-item flex-item-container">
-            <div class="flex-item" id="balconIzquierda"></div>
-            <div class="flex-item" id="balconCentro"></div>
-            <div class="flex-item" id="balconDerecha"></div>
-          </div>
-
-        
-
-
-
+      <div class="flex-item flex-item-container">
+        <div class="flex-item" id="centroIzquerda"></div>
+        <div class="flex-item" id="centroDerecha"></div>
       </div>
+      <div class="flex-item flex-item-container">
+        <div class="flex-item" id="balconIzquierda"></div>
+        <div class="flex-item" id="balconCentro"></div>
+        <div class="flex-item" id="balconDerecha"></div>
+      </div>
+
     </div>
   </div>
+
   <script src="index.js"></script>
 </body>
 
