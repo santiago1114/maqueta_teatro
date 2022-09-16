@@ -8,6 +8,7 @@ function setSeleccionado() {
 
     puestos.forEach((puesto) => {
       document.getElementById(puesto).classList.remove("ocupado")
+      document.getElementById(puesto).classList.remove("discapacidad")
       document.getElementById(puesto).classList.add("seleccionado")
     })
 
@@ -21,7 +22,7 @@ function setSeleccionado() {
 
 function getOcupados() {
   const req = new XMLHttpRequest()
-  req.open("GET", "https://tic.tunja.gov.co:8181/teatro/get-all-vip-ocupados")
+  req.open("GET", "https://tic.tunja.gov.co:8181/teatro/get-by?estado="+"Ocupada")
   req.responseType = "json"
   req.send()
   req.onload = () => {
@@ -35,6 +36,28 @@ function getOcupados() {
         console.log(puestosOc[j])
         if (puestosOc[j] !== "")
           document.getElementById(puestosOc[j]).classList.add("ocupado")
+      }
+    }
+    setSeleccionado()
+  }
+}
+
+function getDiscapacidad() {
+  const req = new XMLHttpRequest()
+  req.open("GET", "https://tic.tunja.gov.co:8181/teatro/get-by?estado="+"Discapa")
+  req.responseType = "json"
+  req.send()
+  req.onload = () => {
+    const res = req.response
+    console.log(res)
+    let puestosOc = []
+    for (let i = 0; i < res.length; i++) {
+      puestosOc = res[i].puesto.split("-")
+      console.log(puestosOc)
+      for (let j = 0; j < puestosOc.length; j++) {
+        console.log(puestosOc[j])
+        if (puestosOc[j] !== "")
+          document.getElementById(puestosOc[j]).classList.add("discapacidad")
       }
     }
     setSeleccionado()
@@ -295,4 +318,4 @@ for (let i = 8; i < 10; i++) {
 }
 
 getOcupados()
-
+getDiscapacidad()
