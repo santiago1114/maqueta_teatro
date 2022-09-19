@@ -1,3 +1,5 @@
+const puestosApartados = {}
+
 function setSeleccionado() {
   const queryString = window.location.search
   const urlParams = new URLSearchParams(queryString)
@@ -20,20 +22,70 @@ function setSeleccionado() {
   }
 }
 
+let count = 0
+
+function seleccionarSilla(id, numPuestos) {
+  count++
+  puestosApartados["silla" + count] = id
+
+  console.log("====================================")
+  console.log(puestosApartados)
+  console.log("====================================")
+
+  document.getElementById(id).classList.add("seleccionado")
+
+  if (count >= numPuestos) {
+    alert("Haz reservado los puestos")
+    const listaPuestos = document.querySelectorAll(".puesto")
+
+    for (let i = 0; i < listaPuestos.length; i++) {
+      listaPuestos[i].removeAttribute("onclick")
+      listaPuestos[i].style.cursor = "not-allowed"
+    }
+
+    savePuesto()
+  }
+}
+
+function getParams() {
+  const queryString = window.location.search
+  const urlParams = new URLSearchParams(queryString)
+
+  if (urlParams.has("h") && urlParams.has("p")) {
+    const documento = urlParams.get("h")
+    const cantidadPuestos = urlParams.get("p")
+
+    alert(`Selecciona ${cantidadPuestos} silla(s) a continuación`)
+    return { documento, cantidadPuestos }
+  } else return { documento: null, cantidadPuestos: null }
+}
+
+function savePuesto() {
+  const req = new XMLHttpRequest()
+  req.open("POST", "https://tic.tunja.gov.co:8181/teatro/set-seat")
+  req.responseType = "json"
+  req.send(JSON.stringify(puestosApartados))
+  req.onload = () => {
+    const res = req.response
+    console.log(res)
+  }
+}
+
 function getOcupados() {
   const req = new XMLHttpRequest()
-  req.open("GET", "https://tic.tunja.gov.co:8181/teatro/get-by?estado="+"Ocupada")
+  req.open(
+    "GET",
+    "https://tic.tunja.gov.co:8181/teatro/get-by?estado=" + "Ocupada"
+  )
   req.responseType = "json"
   req.send()
   req.onload = () => {
     const res = req.response
-    console.log(res)
     let puestosOc = []
     for (let i = 0; i < res.length; i++) {
       puestosOc = res[i].puesto.split("-")
-      console.log(puestosOc)
+
       for (let j = 0; j < puestosOc.length; j++) {
-        console.log(puestosOc[j])
         if (puestosOc[j] !== "")
           document.getElementById(puestosOc[j]).classList.add("ocupado")
       }
@@ -44,18 +96,18 @@ function getOcupados() {
 
 function getDiscapacidad() {
   const req = new XMLHttpRequest()
-  req.open("GET", "https://tic.tunja.gov.co:8181/teatro/get-by?estado="+"Discapa")
+  req.open(
+    "GET",
+    "https://tic.tunja.gov.co:8181/teatro/get-by?estado=" + "Discapa"
+  )
   req.responseType = "json"
   req.send()
   req.onload = () => {
     const res = req.response
-    console.log(res)
     let puestosOc = []
     for (let i = 0; i < res.length; i++) {
       puestosOc = res[i].puesto.split("-")
-      console.log(puestosOc)
       for (let j = 0; j < puestosOc.length; j++) {
-        console.log(puestosOc[j])
         if (puestosOc[j] !== "")
           document.getElementById(puestosOc[j]).classList.add("discapacidad")
       }
@@ -293,7 +345,7 @@ for (let i = 0; i < 3; i++) {
 grada = document.getElementById("balconCentro")
 for (let i = 8; i < 10; i++) {
   grada.innerHTML += `<div style="display: flex">
-      <div class="puesto" id="${abc[i] + abc[i] + 101}">${
+      <div onclick="" class="puesto" id="${abc[i] + abc[i] + 101}">${
     abc[i] + abc[i] + 101
   }</div>
       <div class="puesto" id="${abc[i] + abc[i] + 102}">${
@@ -319,3 +371,14 @@ for (let i = 8; i < 10; i++) {
 
 getOcupados()
 getDiscapacidad()
+const obj = getParams()
+console.log(obj)
+const listaPuestos = document.querySelectorAll(".puesto")
+
+for (let i = 0; i < listaPuestos.length; i++) {
+  listaPuestos[i].setAttribute(
+    "onclick",
+    `seleccionarSilla("${listaPuestos[i].id}", ${obj.cantidadPuestos});`
+  )
+  listaPuestos[i].style.cursor = "pointer"
+}
