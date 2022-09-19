@@ -101,12 +101,12 @@ body {
 }
 
 .seleccionado {
-  background-color: #4CBB17;
+  background-color:#fff;
+  color: black;
 }
 
 .ocupado {
-  background-color: #fff;
-  color: black;
+  background-color:#8B0000;
 }
 
 .logo {
@@ -124,6 +124,7 @@ body {
   align-items: center;
   color: beige;
   position: fixed;
+  gap: 10px;
   bottom: 20px;
   right: 20px;
   z-index: 99;
