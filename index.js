@@ -1,6 +1,6 @@
 const booking = {}
-//const URL = "https://tic.tunja.gov.co:8181/teatro"
-const URL = "http://localhost:8090"
+const URL = "https://tic.tunja.gov.co:8181/teatro"
+//const URL = "http://localhost:8090"
 const QUERY_PARAMS = new URLSearchParams(window.location.search)
 const ABC = [
   "A",
@@ -141,7 +141,7 @@ function getDiscapacidad() {
   const req = new XMLHttpRequest()
   req.open(
     "GET",
-    "https://tic.tunja.gov.co:8181/teatro/get-by?estado=" + "Discapa"
+    URL + "/get-by?estado=" + "Discapa"
   )
   req.responseType = "json"
   req.send()
