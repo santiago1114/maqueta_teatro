@@ -143,6 +143,14 @@ h4 {
   backface-visibility:hidden;
 }
 
+#spinner {
+  display: none;
+  position: fixed;
+  z-index: 1031; /* High z-index so it is on top of the page */
+  top: 50%;
+  right: 50%; /* or: left: 50%; */
+}
+
 @media screen and (max-width: 64em) {
   body {
     font-size: 80%;

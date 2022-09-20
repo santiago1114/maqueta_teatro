@@ -80,11 +80,10 @@ function setAllowedBooking() {
 }
 
 function savePuesto() {
-  alert(
-    booking["silla2"]
-      ? `Haz reservado los puestos ${booking["silla1"]}-${booking["silla2"]}. \nSe enviará un correo con la reserva realizada.`
-      : `Haz reservado el puesto ${booking["silla1"]}. \nSe enviará un correo con la reserva realizada.`
-  )
+  const buttonSubmit = document.getElementById("reservar")
+
+  buttonSubmit.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Reservar`
+  buttonSubmit.setAttribute("disabled", "")
 
   booking["documento"] = QUERY_PARAMS.get("h")
 
@@ -99,11 +98,16 @@ function savePuesto() {
     .then((res) => res.json())
     .then((res) => {
       if (res.created) {
+        alert(
+          booking["silla2"]
+            ? `Haz reservado los puestos ${booking["silla1"]}-${booking["silla2"]}. \nSe enviará un correo con la reserva realizada.`
+            : `Haz reservado el puesto ${booking["silla1"]}. \nSe enviará un correo con la reserva realizada.`
+        )
+
         window.location.href = "https://tic.tunja.gov.co/bicentenario"
       } else {
-        alert(
-          "No se ha podido reservar las sillas. \nRefresca e intenta de nuevo."
-        )
+        alert("No se ha podido reservar las sillas. \nIntenta de nuevo.")
+        reestablecer()
       }
     })
 }
@@ -118,8 +122,8 @@ function showButtons() {
 
   document.querySelector(
     ".drag"
-  ).innerHTML = `<button class="btn btn-warning" onclick="reestablecer()">Reestablecer</button>
-  <button class="btn btn-primary" onclick="savePuesto()">Reservar</button>`
+  ).innerHTML = `<button class="btn btn-info" onclick="reestablecer()">Cambiar</button>
+  <button id="reservar" class="btn btn-primary" onclick="savePuesto()">Reservar</button>`
 }
 
 function reestablecer() {
