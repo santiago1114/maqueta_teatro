@@ -81,10 +81,9 @@ function setAllowedBooking() {
 
 function savePuesto() {
   alert(
-    "Haz reservado" + booking["silla2"]
-      ? `los puestos ${booking["silla1"]}-${booking["silla2"]}`
-      : `El puesto ${booking["silla1"]}` +
-          ". \n Se enviará un correo con la reserva realizada."
+    booking["silla2"]
+      ? `Haz reservado los puestos ${booking["silla1"]}-${booking["silla2"]}. \nSe enviará un correo con la reserva realizada.`
+      : `Haz reservado el puesto ${booking["silla1"]}. \nSe enviará un correo con la reserva realizada.`
   )
 
   booking["documento"] = QUERY_PARAMS.get("h")
@@ -96,7 +95,7 @@ function savePuesto() {
         window.location.href = "https://tic.tunja.gov.co/bicentenario"
       } else {
         alert(
-          "No se ha podido reservar las sillas, refresca e intenta de nuevo"
+          "No se ha podido reservar las sillas. \nRefresca e intenta de nuevo."
         )
       }
     })
