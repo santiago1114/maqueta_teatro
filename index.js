@@ -88,7 +88,14 @@ function savePuesto() {
 
   booking["documento"] = QUERY_PARAMS.get("h")
 
-  fetch(URL + "/set-seat", { method: "POST", body: JSON.stringify(booking) })
+  fetch(URL + "/set-seat", {
+    method: "POST",
+    body: JSON.stringify(booking),
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  })
     .then((res) => res.json())
     .then((res) => {
       if (res.created) {

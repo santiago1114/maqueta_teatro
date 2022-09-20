@@ -6,6 +6,10 @@ body {
   color: beige;
 }
 
+h4 {
+  color: beige;
+}
+
 @keyframes dragAnimation {
   from {right: 20px;}
   to {right: 60px;}
