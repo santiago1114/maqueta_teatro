@@ -87,12 +87,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #444451;
+  
   height: 24px;
   width: 30px;
   margin: 3px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.libre {
+  background-color: #444451;
 }
 
 .discapacidad {
