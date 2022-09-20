@@ -409,5 +409,6 @@ for (let i = 8; i < 10; i++) {
 getOcupados()
   .then(() => getDiscapacidad())
   .then(() => {
+    setSeleccionado()
     setAllowedBooking()
   })
