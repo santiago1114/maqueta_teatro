@@ -102,12 +102,22 @@ function savePuesto() {
   req.send(JSON.stringify(booking))
   req.onload = () => {
     const res = req.response
-    console.log(res)
-    window.location.href = "https://tic.tunja.gov.co/bicentenario"
+    if (res.status){
+      window.location.href = "https://tic.tunja.gov.co/bicentenario"
+    } else {
+      alert("No se ha podido reservar las sillas, refresca e intenta de nuevo")
+    }
   }
 }
 
 function showButtons() {
+  const listaPuestos = document.querySelectorAll(".puesto")
+
+  for (let i = 0; i < listaPuestos.length; i++) {
+    listaPuestos[i].style.setProperty("cursor", "not-allowed")
+    listaPuestos[i].removeAttribute("onclick")
+  }
+
   document.querySelector(
     ".drag"
   ).innerHTML = `<button class="btn btn-warning" onclick="reestablecer()">Reestablecer</button>
@@ -139,10 +149,7 @@ function getOcupados() {
 
 function getDiscapacidad() {
   const req = new XMLHttpRequest()
-  req.open(
-    "GET",
-    URL + "/get-by?estado=" + "Discapa"
-  )
+  req.open("GET", URL + "/get-by?estado=" + "Discapa")
   req.responseType = "json"
   req.send()
   req.onload = () => {
