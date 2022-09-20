@@ -18,14 +18,13 @@ body {
 .flex-item-container {
   display: flex;
   gap: 100px;
-  margin-top: 50px;
 }
 
 .flex-item-container-col {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  margin-top: 50px;
+
   perspective: 1000px;
   margin-bottom: 30px;
   height: 100%;
